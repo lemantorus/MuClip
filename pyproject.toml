@@ -1,5 +1,5 @@
 [project]
-name = "voicescenes"
+name = "muclip"
 version = "0.1.0"
 description = "Cut music-video clips by words — yt-dlp + FFmpeg + AssemblyAI + DeepSeek via OpenRouter"
 readme = "README.md"

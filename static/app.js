@@ -1,4 +1,4 @@
-/* VoiceScenes frontend — vanilla JS, no build step */
+/* MuClip frontend — vanilla JS, no build step */
 "use strict";
 
 const $ = (sel) => document.querySelector(sel);

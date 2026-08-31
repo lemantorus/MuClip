@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎬 VoiceScenes
+# 🎬 MuClip
 
 **Cut clips from music videos by *words* — not by timeframe.**
 
@@ -31,7 +31,7 @@ pick a few words in the transcript → FFmpeg re-renders the exact clip.
   and get suggested moments as previewable, cuttable cards
 - 🗂 Everything is persisted in a single `store.json` — no database required
 
-![VoiceScenes UI](docs/screenshot.png)
+![MuClip UI](docs/screenshot.png)
 
 ---
 
@@ -76,8 +76,8 @@ that can't be matched letter-for-letter inside the transcript is safely dropped.
 
 ```bash
 # 1. Get the code
-git clone https://github.com/<you>/voicescenes.git
-cd voicescenes
+git clone https://github.com/<you>/muclip.git
+cd muclip
 
 # 2. Install Python dependencies (uses uv + uv.lock)
 uv sync
@@ -115,11 +115,11 @@ API keys and preferences can be set two ways:
 
 | Variable | Purpose | Default |
 |---|---|---|
-| `VOICESCENES_ASSEMBLY_KEY` | AssemblyAI API key | *(empty)* |
-| `VOICESCENES_OPENROUTER_KEY` | OpenRouter API key | *(empty)* |
-| `VOICESCENES_MODEL` | LLM model id (OpenRouter) | `deepseek/deepseek-v4-flash-0731` |
-| `VOICESCENES_HOST` | Bind address for `uv run server.py` | `127.0.0.1` |
-| `VOICESCENES_PORT` | Port for `uv run server.py` | `8010` |
+| `MUCLIP_ASSEMBLY_KEY` | AssemblyAI API key | *(empty)* |
+| `MUCLIP_OPENROUTER_KEY` | OpenRouter API key | *(empty)* |
+| `MUCLIP_MODEL` | LLM model id (OpenRouter) | `deepseek/deepseek-v4-flash-0731` |
+| `MUCLIP_HOST` | Bind address for `uv run server.py` | `127.0.0.1` |
+| `MUCLIP_PORT` | Port for `uv run server.py` | `8010` |
 
 ---
 
@@ -188,4 +188,4 @@ The frontend is a single page, but everything is exportable over a small REST AP
 
 ## 📄 License
 
-[MIT](LICENSE) © 2026 VoiceScenes contributors
+[MIT](LICENSE) © 2026 MuClip contributors

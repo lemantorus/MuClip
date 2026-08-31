@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎬 VoiceScenes
+# 🎬 MuClip
 
 **Нарезайте клипы из музыкальных видео *по словам* — а не по таймкодам.**
 
@@ -20,7 +20,7 @@
 - 💬 Встроенный агент-чат: спросите *«найди припев»* или *«где он поёт про самолёт»* — получите готовые карточки с моментами, которые можно предпросмотреть и нарезать
 - 🗂 Всё состояние хранится в одном `store.json` — без базы данных
 
-![VoiceScenes UI](docs/screenshot.png)
+![MuClip UI](docs/screenshot.png)
 
 ---
 
@@ -47,7 +47,7 @@
 ## Быстрый старт
 
 ```bash
-git clone <ваш-репозиторий> && cd voicescenes
+git clone <ваш-репозиторий> && cd muclip
 uv sync                                            # установка зависимостей
 mv .env.example .env && vim .env                   # впишите ключи, или…
 # …введите ключи прямо в приложении (панель Settings) — они сохранятся в store.json
@@ -63,11 +63,11 @@ uv run server.py                                   # → http://127.0.0.1:8010
 
 | Переменная | Назначение | По умолчанию |
 |---|---|---|
-| `VOICESCENES_ASSEMBLY_KEY` | ключ AssemblyAI | — |
-| `VOICESCENES_OPENROUTER_KEY` | ключ OpenRouter | — |
-| `VOICESCENES_MODEL` | модель LLM (OpenRouter) | `deepseek/deepseek-v4-flash-0731` |
-| `VOICESCENES_HOST` | адрес запуска | `127.0.0.1` |
-| `VOICESCENES_PORT` | порт запуска | `8010` |
+| `MUCLIP_ASSEMBLY_KEY` | ключ AssemblyAI | — |
+| `MUCLIP_OPENROUTER_KEY` | ключ OpenRouter | — |
+| `MUCLIP_MODEL` | модель LLM (OpenRouter) | `deepseek/deepseek-v4-flash-0731` |
+| `MUCLIP_HOST` | адрес запуска | `127.0.0.1` |
+| `MUCLIP_PORT` | порт запуска | `8010` |
 
 ---
 
@@ -83,4 +83,4 @@ uv run server.py                                   # → http://127.0.0.1:8010
 
 ## 📄 Лицензия
 
-[MIT](LICENSE) © 2026 VoiceScenes contributors
+[MIT](LICENSE) © 2026 MuClip contributors

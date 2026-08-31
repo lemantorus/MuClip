@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-VoiceScenes — music video scene cutter.
+MuClip — music video scene cutter.
 Pipeline: yt-dlp (download) -> ffmpeg (mp3) -> AssemblyAI (word timestamps)
         -> OpenRouter LLM (scenes, no reasoning) -> ffmpeg (hardware-accelerated cuts)
 All state lives in store.json. Frontend is static/ (HTML+CSS+JS, no build step).
@@ -43,9 +43,9 @@ OPENROUTER_CHAT = "https://openrouter.ai/api/v1/chat/completions"
 # API keys come from the environment (see .env.example) or from the Settings
 # panel in the UI — never hardcode secrets in source.
 DEFAULT_SETTINGS = {
-    "assembly_key": os.environ.get("VOICESCENES_ASSEMBLY_KEY", "").strip(),
-    "openrouter_key": os.environ.get("VOICESCENES_OPENROUTER_KEY", "").strip(),
-    "model": os.environ.get("VOICESCENES_MODEL", "deepseek/deepseek-v4-flash-0731"),
+    "assembly_key": os.environ.get("MUCLIP_ASSEMBLY_KEY", "").strip(),
+    "openrouter_key": os.environ.get("MUCLIP_OPENROUTER_KEY", "").strip(),
+    "model": os.environ.get("MUCLIP_MODEL", "deepseek/deepseek-v4-flash-0731"),
     "llm_auto_cut": True,
     "output_dir": "",
 }
@@ -57,7 +57,7 @@ ENC_PRESETS = {
     "cpu": ["-c:v", "libx264", "-preset", "veryfast", "-crf", "20"],
 }
 
-app = FastAPI(title="VoiceScenes")
+app = FastAPI(title="MuClip")
 
 # --------------------------------------------------------------------------
 # Store (JSON)
@@ -321,7 +321,7 @@ def _norm_chars(s: str) -> str:
 # Chat agent (DeepSeek via OpenRouter) — finds moments, suggests timings
 # --------------------------------------------------------------------------
 CHAT_SYSTEM = (
-    "You are VoiceScenes' assistant inside a music-video scene cutter. The user "
+    "You are MuClip's assistant inside a music-video scene cutter. The user "
     "asks you to find moments in the transcript; you return what they can cut.\n"
     "You receive the full transcript as PLAIN TEXT (no timestamps). To point at a "
     "moment, return a verbatim contiguous substring of that text in 'quote'.\n"
@@ -1074,8 +1074,8 @@ app.mount("/", StaticFiles(directory=STATIC_DIR, html=True), name="static")
 def main():
     import uvicorn
 
-    host = os.environ.get("VOICESCENES_HOST", "127.0.0.1")
-    port = int(os.environ.get("VOICESCENES_PORT", "8010"))
+    host = os.environ.get("MUCLIP_HOST", "127.0.0.1")
+    port = int(os.environ.get("MUCLIP_PORT", "8010"))
     uvicorn.run(app, host=host, port=port, log_level="info")
 
 
