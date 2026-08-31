@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Runtime data — generated on first run, never commit
+media/
+store.json
+
+# Local tooling
+.playwright-mcp/
+.codegraph/
+
+# Development screenshots at the repo root (not needed upstream)
+/app*.png
+/full.png

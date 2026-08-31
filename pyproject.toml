@@ -1,0 +1,32 @@
+[project]
+name = "voicescenes"
+version = "0.1.0"
+description = "Cut music-video clips by words — yt-dlp + FFmpeg + AssemblyAI + DeepSeek via OpenRouter"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+keywords = [
+    "music-video",
+    "video-editing",
+    "ffmpeg",
+    "assemblyai",
+    "deepseek",
+    "youtube-downloader",
+    "speech-to-text",
+]
+classifiers = [
+    "Environment :: Web Environment",
+    "Framework :: FastAPI",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Video :: Conversion",
+]
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+    "requests>=2.31",
+]
+
+[tool.uv]
+package = false
